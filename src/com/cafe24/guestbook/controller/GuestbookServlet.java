@@ -10,10 +10,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.cafe24.guestbook.dao.GuestBookDao;
-import com.cafe24.guestbook.util.WebUtil;
 import com.cafe24.guestbook.vo.GuestBookVo;
+import com.cafe24.mvc.util.WebUtil;
 
-@WebServlet("/gb")
+@WebServlet({"/gb","/gb/add"})
 public class GuestbookServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -23,7 +23,9 @@ public class GuestbookServlet extends HttpServlet {
 		request.setCharacterEncoding("utf-8");
 
 		String actionName = request.getParameter("a");
-
+		String uri = request.getRequestURI();
+		System.out.println(uri);
+		
 		if ("form".equals(actionName)) {
 			String no = request.getParameter("no");
 
@@ -35,9 +37,6 @@ public class GuestbookServlet extends HttpServlet {
 
 			String password = request.getParameter("password");
 			int no = Integer.parseInt(request.getParameter("no"));
-
-			System.out.println(no);
-			System.out.println(password);
 
 			GuestBookDao dao = new GuestBookDao();
 			GuestBookVo vo = dao.getGusetBook(no);

@@ -7,9 +7,9 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.cafe24.guestbook.util.AutoClose;
-import com.cafe24.guestbook.util.ConnectionFactroy;
 import com.cafe24.guestbook.vo.GuestBookVo;
+import com.cafe24.mvc.util.AutoClose;
+import com.cafe24.mvc.util.ConnectionFactroy;
 
 public class GuestBookDao {
 

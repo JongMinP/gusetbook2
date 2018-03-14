@@ -1,4 +1,4 @@
-package com.cafe24.guestbook.util;
+package com.cafe24.mvc.util;
 
 import java.io.IOException;
 
